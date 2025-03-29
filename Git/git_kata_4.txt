@@ -1,0 +1,21 @@
+Git Merge: ¿Cuál es el propósito principal del comando git merge <rama_origen>?; Integrar los cambios (commits) de <rama_origen> en la rama actualmente activa (HEAD).
+
+Git Merge Workflow: ¿En qué rama debes estar antes de ejecutar git merge <rama_origen> para actualizar la rama destino?; Debes estar en la rama destino (la que quieres actualizar). Usa git switch destino primero.
+
+Git Merge: ¿Qué es un "Fast-forward merge"?; Un tipo de merge donde la rama destino simplemente "avanza" su puntero hasta el último commit de la rama origen, sin crear un commit de fusión.
+
+Git Merge: ¿Bajo qué condición ocurre una fusión "Fast-forward" al ejecutar git merge feature estando en master?; Ocurre cuando master no ha tenido ningún commit nuevo desde que feature fue creada a partir de ella. El historial es lineal.
+
+Git Merge: Después de un merge "Fast-forward" exitoso de feature en master, ¿a dónde apuntan los punteros de master y feature?; Ambos apuntan al mismo commit más reciente (el último commit que se hizo en feature).
+
+Git Branches: ¿Cuál es el propósito de usar nombres de rama con barras, como feature/nombre o bugfix/otro-nombre?; Es una convención para organizar y categorizar ramas según su propósito (ej: nueva funcionalidad, corrección de error), facilitando la gestión del repositorio.
+
+Git Branches: ¿Qué comando se utiliza para eliminar de forma segura una rama que ya ha sido fusionada?; git branch -d <nombre-rama>
+
+Git Branches: ¿Por qué git branch -d <rama> previene la pérdida de trabajo?; Solo permite eliminar la rama si todos sus commits ya están incluidos (fusionados) en otra rama (usualmente la rama actual o su upstream). Si no, da error.
+
+Git Branches: ¿Qué información adicional proporciona git branch -v en comparación con git branch?; Muestra el último commit (hash corto y mensaje) de cada rama local, además del nombre.
+
+Git Workflow Verification: En la terminal (no Git), ¿qué comando común te permite ver rápidamente el contenido de un archivo como greeting.txt para verificar cambios?; cat greeting.txt
+
+Git Merge Workflow: ¿Por qué es útil usar git diff master feature/uppercase antes de ejecutar git merge feature/uppercase (estando en master)?; Para previsualizar exactamente qué cambios se van a integrar desde feature/uppercase a master.

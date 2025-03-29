@@ -1,0 +1,23 @@
+#separator:tab
+#html:true
+¿Qué comando muestra la rama actual y los cambios pendientes?	git status<br>Detalle: Muestra la rama actual, archivos modificados, no rastreados y en staging.
+¿Qué hace&nbsp;&nbsp;<code>git add &lt;archivo&gt;</code>?	Añade cambios del working directory al staging area.<br>Ejemplo:&nbsp;git add file.txt&nbsp;prepara el archivo para commit.
+¿Cómo se crea un commit con mensaje directamente?	"<code>git commit -m ""Mensaje descriptivo""</code><br>Importante: El mensaje debe ser claro y conciso."
+¿Qué muestra&nbsp;<code>git log --oneline --graph</code>?	Historial de commits en una línea por commit + gráfico de ramas.<br>Uso: Para visualizar rápidamente el historial y bifurcaciones.
+Diferencia entre&nbsp;Working Directory&nbsp;y&nbsp;Staging Area	<div>Working Directory: Cambios locales no guardados en Git.</div><div>Staging Area: Cambios listos para ser commiteados.</div><br>
+¿Qué pasa si modificas un archivo después de&nbsp;git add?	La versión en staging no se actualiza. Debes usar&nbsp;<code>git add</code>&nbsp;nuevamente para incluir los nuevos cambios.
+Comando para ver los últimos 3 commits	<code>git log -n 3</code><br>Alternativas:&nbsp;<code>git log --oneline -n 3</code>&nbsp;para versión simplificada.
+¿Qué configuración inicial es obligatoria en Git?	"<code>git config --global user.name ""Tu nombre"" <br>git config --global user.email ""tu@email.com""</code>"
+¿Cómo se ve un archivo en&nbsp;<code>git status</code>&nbsp;después de ser modificado dos veces sin&nbsp;<code>git add</code>?	Changes not staged for commit:&nbsp; <br>&nbsp; modified:&nbsp;&nbsp; file.txt&nbsp;
+Error común al hacer commit sin&nbsp;git add	Git no incluirá los cambios recientes del working directory, solo lo que esté en staging area.
+Diagrama de estados de Git	Working Directory → Staging Area → Repository&nbsp;<br><br><ul><li><div><strong>Working Directory</strong>: Archivos locales.</div></li><li><div><strong>Staging Area</strong>: Cambios preparados.</div></li><li><div><strong>Repository</strong>: Commits guardados.</div></li></ul>
+¿Qué muestra&nbsp;git diff?	Diferencias entre el&nbsp;Working Directory&nbsp;y el&nbsp;Staging Area&nbsp;(cambios no añadidos con&nbsp;git add).<br>Ejemplo: Si modificas un archivo sin&nbsp;git add,&nbsp;git diff&nbsp;lo mostrará.
+¿Qué muestra&nbsp;git diff --staged?	Diferencias entre el&nbsp;Staging Area&nbsp;y el&nbsp;último commit&nbsp;(cambios listos para commit).<br>Ejemplo: Después de&nbsp;git add file.txt,&nbsp;git diff --staged&nbsp;muestra esos cambios.
+¿Cómo quitar cambios del&nbsp;Staging Area&nbsp;y devolverlos al&nbsp;Working Directory?	git restore --staged &lt;archivo&gt;<br>Ejemplo:&nbsp;git restore --staged file.txt&nbsp;deshace el&nbsp;git add.
+¿Cómo descartar cambios en el&nbsp;Working Directory&nbsp;y restaurar el archivo al último commit?	git restore &lt;archivo&gt;<br>¡Cuidado!&nbsp;Esto elimina los cambios locales no guardados en staging/commit.
+¿Qué pasa si modificas un archivo, lo añades al staging (git add), y luego lo modificas otra vez?	<div>Staging Area: Guarda la primera modificación.</div><div>Working Directory: Tiene la segunda modificación.<br>Ver diferencias: Usa&nbsp;git diff&nbsp;(WD vs Staging) y&nbsp;git diff --staged&nbsp;(Staging vs Repo).</div>
+¿Cuál es la diferencia entre&nbsp;git checkout -- &lt;archivo&gt;&nbsp;y&nbsp;git restore &lt;archivo&gt;?	Hacen lo mismo (descartar cambios en WD), pero&nbsp;git restore&nbsp;es el comando moderno (Git 2.23+).
+¿Por qué&nbsp;git diff --staged&nbsp;podría estar vacío?	Porque no hay cambios en el Staging Area. Ejemplo: Si no has usado&nbsp;git add.
+<div>&nbsp;¿Qué significa este flujo?</div><code><div><div></div><div><br></div></div>Working Directory → (git add) → Staging Area → (git commit) → Repository&nbsp;</code>	<div>El ciclo básico de Git:</div><div>Modificas archivos (Working).</div><div>Preparas cambios (Staging).</div><div>Guardas cambios (Repo).</div>
+Si ejecutas&nbsp;git restore file.txt&nbsp;después de modificarlo sin hacer commit, ¿qué pasa?	El archivo vuelve al estado del&nbsp;último commit&nbsp;o&nbsp;Staging Area&nbsp;(dependiendo de lo que hayas añadido).
+"Si haces&nbsp;git add file.txt&nbsp;y luego&nbsp;echo ""3"" &gt; file.txt, ¿qué muestra&nbsp;git diff --staged?"	"La diferencia entre el&nbsp;Staging Area&nbsp;(con ""2"") y el&nbsp;último commit.<br>Nota: No incluye la segunda modificación (""3""), que está en el Working Directory."

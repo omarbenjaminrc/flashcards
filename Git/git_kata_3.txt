@@ -1,0 +1,21 @@
+Git: ¿Qué representa una "branch" (rama) en términos de historial del proyecto?; Una línea de tiempo o historial de desarrollo independiente, que diverge de otra rama en un punto específico.
+Git Branch Analogy: En la metáfora del cuaderno, ¿qué representa crear una nueva rama?; Poner un marcapáginas especial y empezar a escribir en una nueva sección, continuando desde la página marcada.
+Git: ¿Cuál es el propósito principal de usar ramas (branches)?; Trabajar en nuevas funcionalidades, experimentos o correcciones de errores sin afectar la línea de tiempo principal (ej: master/main), permitiendo aislamiento y gestión controlada.
+Git: ¿Qué comando utilizas para listar todas las ramas locales en tu repositorio?; git branch
+Git: Al usar git branch para listar ramas, ¿cómo se indica la rama actualmente activa?; Aparece marcada con un asterisco (*).
+Git: ¿Qué comando crea una nueva rama llamada myfeature, basada en el commit actual?; git branch myfeature
+Git: Después de crear una rama con git branch <nombre-rama>, ¿cambias automáticamente a esa nueva rama?; No, solo se crea el puntero de la rama; necesitas git switch para cambiar a ella.
+Git: ¿Qué comando usas para cambiar tu directorio de trabajo y tu HEAD a una rama existente llamada develop?; git switch develop
+Git: Al cambiar de rama con git switch, ¿qué sucede con los archivos en tu Directorio de Trabajo (Working Directory)?; Se actualizan para reflejar el estado exacto (los archivos y sus contenidos) del último commit de la rama destino.
+Git: ¿Qué representa el puntero especial HEAD?; Apunta al commit o rama en la que estás trabajando actualmente. Normalmente apunta al nombre de la rama activa (ej: HEAD -> main).
+Git: ¿Qué le ocurre a HEAD cuando ejecutas git switch <otra-rama>?; HEAD se mueve para apuntar a <otra-rama>.
+Git: ¿Por qué desaparece un archivo (file1.txt) creado y confirmado en mybranch cuando cambias a master usando git switch (asumiendo que no existe en master)?; Porque master está en un commit donde file1.txt no existe, y git switch actualiza el Directorio de Trabajo para coincidir con el estado de master.
+Git: ¿Qué es un "commit" en Git?; Una instantánea completa de todos los archivos del proyecto en un punto específico del tiempo, guardada permanentemente en el historial. Tiene un ID único (hash SHA-1) y apunta a su commit padre(s).
+Git: ¿Qué representa conceptualmente una rama (branch) en relación a los commits?; Un puntero móvil que apunta a un commit específico. Al hacer un nuevo commit en esa rama, el puntero avanza automáticamente a ese nuevo commit.
+Git Log: ¿Qué opción de git log muestra el historial de todas las ramas, no solo la actual?; --all
+Git Log: ¿Qué combinación de opciones es útil para ver una representación visual completa de todas las ramas y sus historiales de forma concisa?; git log --oneline --graph --all
+Git: ¿Qué significa que dos ramas han "divergido"?; Que después de compartir un ancestro común, se han realizado commits diferentes e independientes en cada una de ellas, creando historiales distintos a partir de ese punto.
+Git: ¿Qué comando usarías para visualizar claramente la divergencia entre todas las ramas locales?; git log --oneline --graph --all
+Git: ¿Para qué se utiliza el comando git diff <rama1> <rama2>?; Para mostrar las diferencias acumuladas entre el estado del último commit de <rama1> y el último commit de <rama2>.
+Git Kata Scenario: Si estás en mybranch y has creado file1.txt y lo has confirmado, ¿qué esperarías ver si cambias a master (donde file1.txt no existe)?; El archivo file1.txt desaparecería del Directorio de Trabajo.
+Git Kata Scenario: Si estás en master y has creado y confirmado file2.txt, ¿qué pasará con file2.txt si cambias a mybranch (donde no se creó)?; El archivo file2.txt desaparecerá del Directorio de Trabajo al cambiar a mybranch.

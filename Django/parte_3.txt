@@ -1,0 +1,41 @@
+¿Cuál es el enfoque principal de Django Tutorial Parte 3?;Crear la interfaz pública (Vistas) y la presentación (Plantillas) de la aplicación web.
+Django: ¿Qué es una "Vista" (View)?;Una función/método Python que recibe una petición web (request) y devuelve una respuesta web (HttpResponse), manejando la lógica para una URL específica.
+¿Qué recibe una función de vista Django como primer argumento?;El objeto de la petición HTTP, convencionalmente llamado request.
+¿Qué debe devolver una vista Django como mínimo (o qué debe lanzar)?;Debe devolver un objeto HttpResponse o lanzar una excepción (como Http404).
+Además de devolver HttpResponse/lanzar excepción, ¿qué más puede hacer una vista Django?;Cualquier lógica Python: leer/escribir en la DB, usar plantillas, generar PDFs, interactuar con APIs externas, etc.
+Django: ¿Qué es una "URLconf"?;Un módulo Python que mapea patrones de URL a funciones de vista específicas.
+¿Cuál es el propósito principal de una URLconf?;Actuar como un "despachador" (dispatcher), dirigiendo las peticiones URL entrantes a la vista correcta según el patrón coincidente.
+¿En qué archivo se define la URLconf raíz (ROOT_URLCONF) del proyecto?;Por defecto, en mysite/urls.py (el nombre del directorio del proyecto puede variar).
+Django: ¿Qué es un "Patrón de URL" (URL Pattern)?;La forma general de una URL (ej: /polls/<int:pk>/) que Django busca en las URLconfs para encontrar una coincidencia.
+¿Con qué función se definen principalmente los patrones de URL en los archivos urls.py?;Con la función path().
+Cuando Django procesa una URL como /polls/34/results/, ¿cómo usa las URLconfs (raíz y de app) para encontrar la vista?;1. Compara con ROOT_URLCONF (mysite/urls.py).<br>2. Encuentra path('polls/', include('polls.urls')).<br>3. "Corta" polls/ y pasa 34/results/ a polls.urls.<br>4. Compara con polls.urls hasta encontrar una coincidencia (ej: <int:question_id>/results/).
+En un patrón path('<int:question_id>/', views.detail, ...) ¿qué hace específicamente la parte <int:question_id>?;1. Captura la parte de la URL que coincide (ej: "34").<br>2. Usa el convertidor int para validar y convertir el texto capturado a un entero.<br>3. Pasa el valor convertido a la vista.
+¿Cómo se pasan los valores capturados de la URL (ej: question_id=34) a la función de vista?;Como argumentos de palabra clave (keyword arguments) a la función de vista. Ej: views.detail(request, question_id=34).
+Django Views: Escribe una vista detail simple que reciba request y question_id y devuelva un HttpResponse mostrando el ID.;def detail(request, question_id):<br>    return HttpResponse(f"Estás viendo la pregunta {question_id}.")
+En polls/urls.py, ¿cómo conectarías la URL /polls/<id_pregunta>/ a la vista views.detail, capturando el ID como entero y nombrándola 'detail'?;path("int:question_id/", views.detail, name="detail")
+¿Cómo puede una vista Django acceder a datos de la base de datos?;Usando el ORM de Django (importando los modelos y usando métodos como .objects.all(), .objects.get(), .objects.filter(), etc.), como se vio en la Parte 2.
+¿Cuál es el principal problema de incrustar HTML directamente en el código Python de una vista?;Dificulta el mantenimiento y la modificación del diseño (presentación). Acopla fuertemente la lógica y la presentación.
+¿Cuál es el propósito principal del sistema de plantillas de Django?;Separar la lógica de la aplicación (Python/Vistas) de la presentación (HTML/Diseño).
+Por defecto (APP_DIRS=True), ¿dónde busca Django las plantillas de una app?;En un subdirectorio llamado templates dentro del directorio de cada aplicación listada en INSTALLED_APPS.
+¿Por qué es crucial usar "namespacing" para las plantillas (ej: polls/templates/polls/)?;Para evitar colisiones de nombres. Si dos apps tienen una plantilla llamada index.html, Django usará la primera que encuentre si no hay namespace.
+¿Cómo se logra el namespacing de plantillas en la estructura de directorios?;Creando un subdirectorio dentro de templates/ con el mismo nombre que la aplicación. Ej: polls/templates/polls/.
+Dentro de Django, ¿cómo te referirías a la plantilla ubicada en polls/templates/polls/index.html al cargarla?;Como "polls/index.html". El sistema de plantillas busca dentro de los directorios templates/<app_name>/.
+Sintaxis de Plantillas Django: ¿Cómo muestras el valor de una variable mi_variable?;{{ mi_variable }}
+Sintaxis de Plantillas Django: ¿Cómo indicas un bloque lógico como un if o un for?;Usando llaves y porcentajes: {% if ... %}, {% for ... in ... %}, {% endif %}, {% endfor %}.
+Sintaxis de Plantillas Django: ¿Cómo accedes al atributo question_text de un objeto question pasado en el contexto?;{{ question.question_text }} (Usa la sintaxis de punto).
+¿Qué es el "contexto" (context) que se pasa al renderizar una plantilla Django?;Un diccionario Python donde las claves son los nombres de las variables accesibles en la plantilla y los valores son los objetos Python correspondientes.
+¿Cuáles son los 3 pasos básicos para renderizar una plantilla manualmente (sin el atajo render)?;1. Cargar la plantilla (loader.get_template(...)).<br>2. Crear el Contexto (diccionario).<br>3. Renderizar la plantilla con el contexto (template.render(context, request)).
+¿Qué hace la función django.shortcuts.render() y qué 3 argumentos principales toma?;Atajo que carga una plantilla, la renderiza con un contexto y devuelve un HttpResponse.<br>Argumentos: render(request, template_name, context).
+¿Por qué render() es preferible a cargar/renderizar manualmente la plantilla en la mayoría de los casos?;Es un idioma común y más conciso, reduciendo código repetitivo para una tarea muy frecuente.
+¿Qué problema común resuelve django.shortcuts.get_object_or_404()?;El patrón repetitivo de intentar obtener un objeto con .get() y lanzar Http404 si no existe (Model.DoesNotExist).
+¿Qué hace exactamente get_object_or_404(Model, pk=...)?;Intenta ejecutar Model.objects.get(pk=...). Si tiene éxito, devuelve el objeto. Si lanza Model.DoesNotExist, captura la excepción y lanza Http404.
+¿Por qué Django usa un atajo como get_object_or_404 en lugar de capturar DoesNotExist automáticamente en un nivel superior o hacer que el modelo lance Http404?;Para mantener un bajo acoplamiento entre la capa de modelo (que lanza DoesNotExist) y la capa de vista (que maneja Http404). Los atajos son un acoplamiento controlado.
+¿Qué hace la función get_list_or_404()?;Similar a get_object_or_404, pero usa filter() internamente. Lanza Http404 si el resultado del filtro es una lista vacía.
+¿Cuál es el problema de escribir URLs directamente (hardcodear) en las plantillas HTML (ej: <a href="/polls/{{ q.id }}/">)?;Hace que el proyecto sea frágil a cambios de URL. Si cambias un patrón en urls.py, tendrías que actualizarlo manualmente en todas las plantillas que lo usan.
+¿Qué tag de plantilla Django resuelve el problema de las URLs hardcodeadas?;El tag {% url %}.
+¿Qué requisito debe cumplir una definición path() en urls.py para poder usarla con el tag {% url %}?;Debe tener definido el argumento name="<nombre_unico>".
+Sintaxis del Tag {% url %}: ¿Cómo generarías la URL para una vista llamada detail que requiere un argumento question.id?;{% url 'detail' question.id %}
+¿Qué problema surge si varias apps definen URLs con el mismo name (ej: name='detail') al usar {% url %}?;Ambigüedad. Django no sabría a qué URL de qué app te refieres al usar {% url 'detail' ... %}.
+¿Cómo se soluciona el problema de colisión de nombres de URL entre diferentes apps en Django?;Usando namespaces de URL. Se define un namespace para cada app.
+¿Cómo defines un namespace de URL para una aplicación (ej: polls) en su archivo urls.py?;Añadiendo la variable app_name = "polls" (o el nombre deseado) al principio del archivo polls/urls.py.
+Sintaxis del Tag {% url %} con Namespaces: ¿Cómo generarías la URL para la vista detail dentro del namespace polls, pasándole question.id?;{% url 'polls:detail' question.id %} (Se usa namespace:nombre_url).
