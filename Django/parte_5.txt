@@ -1,0 +1,33 @@
+¿Qué son las "Pruebas Automatizadas" (Automated Tests) en el desarrollo de software?;Rutinas de código diseñadas para verificar automáticamente que otra parte del código funciona como se espera.
+¿Cuál es la principal diferencia entre las pruebas automatizadas y las pruebas manuales?;Las pruebas automatizadas son ejecutadas por el sistema, mientras que las manuales requieren intervención humana repetitiva.
+Testing: ¿Por qué escribir pruebas ahorra tiempo a largo plazo?;Porque reemplazan pruebas manuales lentas y repetitivas, y detectan errores rápidamente, especialmente en aplicaciones complejas.
+Testing: ¿Cómo ayudan las pruebas a prevenir problemas (regresiones)?;Actúan como una red de seguridad, asegurando que cambios futuros o correcciones no rompan funcionalidades existentes sin querer.
+Testing: Además de encontrar errores, ¿cómo ayudan las pruebas a la comprensión del código?;Clarifican el comportamiento esperado y actúan como documentación ejecutable.
+Testing: ¿Por qué el código sin pruebas es considerado "roto por diseño" o poco fiable por otros desarrolladores?;Porque no hay garantía formal de que funcione correctamente o de que futuros cambios no lo rompan. Falta confianza.
+Testing: ¿Cómo facilitan las pruebas el trabajo en equipo?;Garantizan que los cambios de un miembro del equipo no rompan inadvertidamente el código de otros (y viceversa).
+¿Qué implica la estrategia "Test-Driven Development" (TDD)?;Escribir las pruebas antes de escribir el código funcional que las haga pasar.
+¿En qué archivo de una aplicación Django se suelen colocar las pruebas por convención?;En el archivo tests.py de esa aplicación.
+¿De qué clase deben heredar las clases que contienen métodos de prueba en Django?;django.test.TestCase
+Dentro de una clase TestCase, ¿cómo deben empezar los nombres de los métodos para que sean descubiertos como pruebas?;Deben empezar con test_.
+¿Qué son los "métodos de aserción" (assertion methods) en una TestCase?;Métodos (ej: self.assertEqual, self.assertTrue, self.assertIs) usados dentro de un método de prueba para verificar si una condición es verdadera o si un valor es el esperado.
+¿Cuál es el comando de manage.py para ejecutar las pruebas de una aplicación específica (ej: polls)?;python manage.py test polls
+Al ejecutar manage.py test, ¿qué 3 acciones principales realiza el sistema de pruebas de Django?;1. Busca tests (clases TestCase, métodos test_).<br>2. Crea una base de datos de prueba separada (temporal).<br>3. Ejecuta los tests y reporta resultados (éxitos, fallos, errores).
+¿Por qué es importante que Django cree una base de datos de prueba separada al ejecutar tests?;Para aislar las pruebas de la base de datos de desarrollo/producción, asegurando un estado limpio para cada ejecución y evitando efectos secundarios en los datos reales.
+Si un test falla, ¿qué información útil suele proporcionar el runner de pruebas?;Indica qué test falló, la aserción específica que falló y a menudo la línea de código donde ocurrió el fallo.
+¿Cuál es el flujo típico al usar tests para corregir un bug?;1. Escribir un test que falle debido al bug.<br>2. Ejecutar tests para confirmar el fallo.<br>3. Corregir el código.<br>4. Volver a ejecutar tests para confirmar que ahora pasan.
+¿Cuál es la principal herramienta que proporciona Django para simular interacciones de usuario (peticiones HTTP) a nivel de vista dentro de los tests?;El Cliente de Prueba de Django (django.test.Client).
+Dentro de una clase TestCase, ¿cómo accedes a la instancia del cliente de prueba?;A través del atributo self.client.
+¿Cómo simulas una petición GET a una URL específica dentro de un test TestCase?;Usando response = self.client.get(<url>).
+¿Por qué es importante usar reverse() para generar URLs dentro de los tests en lugar de hardcodearlas?;Para evitar que los tests se rompan si las URLs cambian en urls.py. Mantiene los tests desacoplados de las rutas específicas.
+En el objeto response devuelto por self.client.get(), ¿qué atributo contiene el código de estado HTTP?;response.status_code.
+En el objeto response, ¿qué atributo te permite acceder al diccionario de contexto pasado a la plantilla?;response.context.
+¿Qué método de aserción de TestCase usarías para verificar si un texto específico está presente en el contenido HTML de la respuesta?;self.assertContains(response, "Texto esperado").
+¿Qué método de aserción de TestCase es útil para comparar un QuerySet devuelto en el contexto con una lista esperada de objetos?;self.assertQuerySetEqual(response.context['nombre_lista'], lista_esperada).
+¿Para qué sirve crear funciones "helper" (ayudantes) dentro de tests.py (ej: create_question)?;Para reducir la repetición de código al crear datos de prueba comunes necesarios en múltiples métodos de test.
+¿Cómo probarías que una vista DetailView devuelve correctamente un 404 si se intenta acceder a un objeto con fecha futura (asumiendo que get_queryset lo filtra)?;1. Crear objeto con fecha futura.<br>2. Generar su URL con reverse()<br>3. Hacer response = self.client.get(url).<br>4. Usar self.assertEqual(response.status_code, 404).
+Según la filosofía de testing de Django, ¿es un problema tener "demasiados" tests o algo de repetición en ellos?;No, generalmente "más es mejor". La redundancia en tests es aceptable y la seguridad que proporcionan supera la preocupación por la concisión extrema.
+¿Cuál es una buena regla general para organizar las clases de test?;Tener una clase TestClass separada por cada modelo o vista que se esté probando.
+¿Cuál es una buena regla general para organizar los métodos de test dentro de una clase?;Tener un método test_ separado por cada condición o escenario específico que se quiera verificar.
+¿Cómo deben ser idealmente los nombres de los métodos de test?;Descriptivos, indicando claramente qué función o condición están probando (ej: test_question_with_future_pub_date_is_not_displayed).
+¿Qué tipo de herramientas permiten probar cómo se renderiza el HTML/JS en un navegador real, simulando la interacción completa del usuario?;Frameworks "in-browser" como Selenium, usados junto con LiveServerTestCase de Django.
+¿Qué mide la "cobertura de código" (code coverage) y por qué es útil?;Mide qué porcentaje del código de producción es ejecutado por los tests. Ayuda a identificar partes no probadas, código frágil o código muerto.

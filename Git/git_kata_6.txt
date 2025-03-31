@@ -1,0 +1,27 @@
+Git Merge Conflict: ¿Cuándo ocurre típicamente un conflicto de fusión (merge conflict)?; Cuando intentas fusionar dos ramas que han modificado la misma sección del mismo archivo de manera diferente desde su último ancestro común.
+
+Git Merge Conflict: ¿Por qué Git detiene el proceso de fusión ante un conflicto en lugar de elegir una versión?; Porque Git no puede adivinar cuál de los cambios conflictivos es el correcto o cómo combinarlos; requiere intervención humana.
+
+Git Merge Conflict: ¿Qué indica el comando git status inmediatamente después de que una fusión falle debido a un conflicto?; Muestra los archivos afectados bajo el título "Unmerged paths" (rutas sin fusionar) e indica que estás en medio de una fusión.
+
+Git Merge Conflict: En un archivo con conflicto, ¿qué delimita el marcador <<<<<<< HEAD?; El inicio del bloque de código tal como existe en la rama actual (la rama a la que estás fusionando, referenciada por HEAD).
+
+Git Merge Conflict: En un archivo con conflicto, ¿qué función cumple el marcador =======?; Separa visualmente los cambios conflictivos provenientes de la rama actual (HEAD) de los cambios provenientes de la rama que se está fusionando.
+
+Git Merge Conflict: En un archivo con conflicto, ¿qué indica el marcador >>>>>>> nombre-rama?; El final del bloque de código tal como existe en la rama que estás intentando fusionar (nombre-rama).
+
+Git Merge Conflict: ¿Cuál es el primer paso manual esencial para resolver un conflicto una vez identificado?; Abrir el archivo (o archivos) marcado como "Unmerged paths" en un editor de texto.
+
+Git Merge Conflict: Al editar un archivo para resolver un conflicto, ¿cuál es el objetivo principal respecto al contenido y los marcadores?; Modificar el código para que tenga el resultado final deseado y eliminar completamente todos los marcadores de conflicto (<<<<<<<, =======, >>>>>>>).
+
+Git Merge Conflict: Después de editar manualmente un archivo y resolver el conflicto, ¿qué comando se usa para indicarle a Git que el conflicto en ese archivo específico está resuelto?; git add <archivo_resuelto>
+
+Git Merge Conflict: ¿Cuál es el propósito específico de git add <archivo> en el contexto de la resolución de conflictos?; Marcar el archivo como resuelto y listo para ser incluido en el commit que finalizará la fusión (no añade nuevos cambios si no los hiciste, solo actualiza el índice de Git respecto al estado de fusión).
+
+Git Merge Conflict: Una vez que todos los conflictos han sido resueltos y marcados con git add, ¿qué comando se ejecuta para finalizar el proceso de fusión?; git commit
+
+Git Merge Conflict: ¿Qué tipo de commit se crea típicamente al finalizar una fusión que implicó resolver conflictos (es decir, no fue fast-forward)?; Un "Merge Commit" (Commit de Fusión).
+
+Git Merge Commit: ¿Cuál es la característica principal que distingue a un "Merge Commit" de un commit normal en términos de sus ancestros (padres)?; Tiene dos commits padres, uno de cada una de las ramas que se fusionaron.
+
+Git Merge Commit: ¿Cómo se puede visualizar gráficamente la unión de las ramas en un "Merge Commit" con sus dos padres?; Usando git log --oneline --graph (o incluyendo --all).
