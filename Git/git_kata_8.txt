@@ -1,0 +1,17 @@
+Git Rebase: ¿Cuál es el propósito fundamental de git rebase <base>?; Reescribir el historial de la rama actual aplicando sus commits únicos "encima" del último commit de la rama <base>, creando un historial lineal.
+
+Git Rebase: Describe el efecto principal de rebase en el historial de la rama sobre la que se aplica.; Reescribe el historial. Los commits originales son reemplazados por nuevos commits (mismo contenido, nuevo ID/padre) que aparecen después de la <base> especificada.
+
+Git Rebase: Al ejecutar git rebase master estando en feature, ¿qué le sucede a los identificadores (hashes SHA-1) de los commits originales de feature?; Son reemplazados. Los commits reaplicados sobre master obtienen nuevos identificadores (hashes) porque tienen un nuevo commit padre y una nueva posición en la historia.
+
+Git Rebase vs Merge: ¿Cuál es la principal diferencia visual en el historial (git log --graph) después de un rebase en comparación con un merge de ramas divergentes?; rebase produce un historial lineal (una línea recta), mientras que merge (sin fast-forward) muestra una bifurcación que se une con un commit de fusión.
+
+Git Rebase Workflow: Si la rama feature ha sido "rebased" sobre master, ¿qué tipo de fusión se espera al ejecutar git merge feature desde master?; Una fusión "Fast-forward", porque el historial de master es ahora un ancestro directo del historial actualizado (rebased) de feature.
+
+Git Rebase: ¿Cuál es el principal beneficio citado para usar rebase en lugar de merge (cuando es apropiado)?; Produce un historial de proyecto más limpio y lineal, evitando commits de fusión intermedios y facilitando su lectura y seguimiento.
+
+Git Rebase: ¿Cuál es la regla de oro o precaución más importante sobre cuándo NO usar rebase?; Nunca usar rebase en ramas que ya han sido compartidas (empujadas/pushed) y sobre las cuales otros podrían estar trabajando, ya que reescribir la historia compartida causa problemas graves de sincronización.
+
+Git Rebase: Si estás en la rama uppercase y quieres aplicar sus cambios únicos directamente sobre los últimos cambios de master, ¿qué comando exacto usarías?; git rebase master
+
+Git Rebase Verification: ¿Qué comando es esencial para visualizar cómo ha cambiado la estructura del historial después de ejecutar git rebase?; git log --oneline --graph --all (o similar, para ver la nueva disposición lineal).

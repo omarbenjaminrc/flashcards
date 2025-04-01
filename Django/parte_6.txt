@@ -1,0 +1,15 @@
+Django: ¿Qué se consideran "archivos estáticos"?;Archivos adicionales necesarios para renderizar una página web, aparte del HTML, como CSS, JavaScript e imágenes.
+¿Cuál es la principal aplicación incorporada de Django responsable de gestionar los archivos estáticos?;django.contrib.staticfiles
+¿Cuál es la función clave de django.contrib.staticfiles?;Recolectar archivos estáticos de todas las apps (y otras fuentes) en una ubicación centralizada para facilitar su servicio, especialmente en producción.
+Por defecto, ¿dónde busca el buscador AppDirectoriesFinder los archivos estáticos de una aplicación?;En un subdirectorio llamado static dentro del directorio principal de cada app en INSTALLED_APPS.
+¿Por qué es crucial usar "namespacing" para los archivos estáticos (ej: crear polls/static/polls/)?;Para evitar colisiones de nombres si diferentes apps tienen archivos estáticos con el mismo nombre. Django usa el primero que encuentra si no hay namespace.
+¿Cómo se implementa el namespacing en la estructura de directorios para los archivos estáticos de una app?;Creando un subdirectorio dentro de la carpeta static/ de la app, con el mismo nombre que la app. Ej: polls/static/polls/.
+En una plantilla Django, ¿qué tag debes cargar antes de poder usar el tag {% static %}?;{% load static %} (normalmente al principio de la plantilla).
+¿Qué función principal cumple el template tag {% static %}?;Genera la URL absoluta correcta para un archivo estático específico, basándose en la configuración STATIC_URL.
+Sintaxis: ¿Cómo referenciarías el archivo style.css ubicado en polls/static/polls/style.css usando el tag static en una plantilla?;<link rel="stylesheet" href="{% static 'polls/style.css' %}"> (Nota el namespace en la ruta).
+¿Cómo se maneja el servicio de archivos estáticos durante el desarrollo usando manage.py runserver?;El servidor de desarrollo (runserver) los sirve automáticamente si la configuración y estructura de directorios son correctas.
+¿Puedes usar el template tag {% static %} dentro de un archivo CSS o JavaScript?;No. Esos archivos no son procesados por el motor de plantillas de Django.
+Al referenciar un archivo estático (ej: una imagen) desde otro archivo estático (ej: un archivo CSS), ¿qué tipo de rutas debes usar?;Rutas relativas.
+Ejemplo: Si tienes style.css en polls/static/polls/ y background.png en polls/static/polls/images/, ¿cómo referenciarías la imagen desde el CSS?;body { background: white url("images/background.png") no-repeat; } (La ruta es relativa a style.css).
+¿Por qué es importante usar rutas relativas entre archivos estáticos en lugar de rutas absolutas o basadas en STATIC_URL?;Porque permite cambiar STATIC_URL (útil en producción) sin tener que modificar manualmente todas las rutas dentro de los archivos CSS, JS, etc.
+¿El manejo de archivos estáticos con runserver es igual al manejo en un entorno de producción real?;No. En producción se requieren pasos adicionales, como ejecutar collectstatic y configurar el servidor web (Nginx, Apache) para servir los archivos recolectados eficientemente.
