@@ -1,0 +1,9 @@
+Git Revert: ¿Cuál es el propósito principal de git revert en el contexto de un historial compartido/público?; Deshacer los cambios introducidos por commits anteriores de forma segura, sin reescribir el historial existente.
+Git Revert: ¿Cómo logra git revert con un identificador de commit (SHA) deshacer cambios sin alterar el historial?; Crea un nuevo commit que contiene los cambios inversos (opuestos) a los del commit especificado por su identificador (SHA).
+Git Revert: Al ejecutar git revert, ¿se elimina o se añade un commit al historial?; Se añade un nuevo commit (el commit de revert).
+Git Revert: Después de usar git revert con el SHA de un commit, ¿qué le sucede al commit original identificado por ese SHA?; Permanece intacto en el historial del repositorio. revert no lo modifica ni lo elimina.
+Git Revert: ¿Cuál es el efecto de git revert con el SHA de un commit en el directorio de trabajo actual?; Los cambios específicos introducidos por el commit identificado por ese SHA son anulados o eliminados del estado actual de los archivos.
+Git Revert: ¿Qué comando usarías para revertir los cambios introducidos por el commit más reciente?; git revert HEAD
+Git Revert: ¿Cómo se revierte un commit específico que no es el más reciente?; 1. Encuentra el identificador SHA del commit a revertir (usando git log). 2. Ejecuta git revert seguido del SHA encontrado.
+Git Revert: Si un commit añadió un archivo con información sensible y luego lo reviertes, ¿se elimina esa información sensible del historial del repositorio?; No. El archivo desaparece del estado actual, pero el commit original (con la información sensible) sigue existiendo en el historial.
+Git Revert: ¿Qué comando te permite verificar que los cambios de un commit original (que ya fue revertido) todavía existen en el historial?; git show seguido del SHA del commit original.
