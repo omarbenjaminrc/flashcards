@@ -1,0 +1,8 @@
+Git: ¿Qué son los "archivos no rastreados" (untracked files)?; Archivos presentes en el Directorio de Trabajo que Git no gestiona. nunca se les ha hecho git add ni forman parte de commits previos.
+Git Clean: ¿Cuál es el propósito principal del comando git clean?; Eliminar archivos no rastreados del Directorio de Trabajo.
+Git Clean: ¿Por qué se considera git clean una operación potencialmente peligrosa?; Porque elimina archivos de forma irreversible. los archivos borrados no se pueden recuperar fácilmente a través de Git.
+Git Clean: ¿Qué hace la opción -n (o --dry-run) usada con git clean?; Simula la operación: muestra qué archivos serían eliminados, pero no borra nada. Es una medida de seguridad crucial.
+Git Clean: ¿Por qué generalmente se requiere la opción -f (o --force) para que git clean realmente borre archivos?; Como medida de seguridad, Git exige confirmación explícita (-f) para realizar la operación destructiva de borrado.
+Git Clean: ¿Qué funcionalidad añade la opción -d al comando git clean?; Permite que git clean elimine también directorios enteros que solo contienen archivos no rastreados, además de archivos sueltos.
+Git Clean: ¿Cómo afecta git add archivo al comportamiento de git clean respecto a ese archivo?; Una vez que un archivo es añadido al Staging Area (git add), deja de ser "no rastreado" y git clean lo ignorará, protegiéndolo del borrado.
+Git Clean: ¿Qué acción realiza el comando git clean -f -d?; Elimina realmente todos los archivos no rastreados (-f) y también los directorios no rastreados (-d) del Directorio de Trabajo.

@@ -1,0 +1,19 @@
+Git Reset: ¿Cuál es la función principal del comando git reset aplicado a un commit anterior?; Mover el puntero de la rama actual (HEAD) a un commit específico (generalmente anterior), potencialmente afectando también el Staging Area y el Working Directory según el modo usado.
+
+Git Reset: ¿Cuál es la regla fundamental sobre cuándo SÍ y cuándo NO usar git reset para modificar el historial?; SÍ usar en historial local no compartido (commits no empujados/pushed). NO usar en historial ya compartido/público.
+
+Git Reset: En comandos como git reset HEAD~1, ¿qué representa la notación HEAD~1?; El commit inmediatamente anterior (el padre) del commit al que apunta actualmente HEAD.
+
+Git Model: Para entender git reset, ¿cuáles son las tres "áreas" o "árboles" principales que Git gestiona?; 1. Working Directory (tus archivos)<br>2. Staging Area (índice)<br>3. Repository History (commits, apuntado por HEAD).
+
+Git Reset --soft: Al ejecutar git reset --soft HEAD~1, ¿qué le sucede a HEAD, al Staging Area y al Working Directory?; - HEAD retrocede 1 commit.<br>- Staging Area: No cambia (los cambios del commit 'deshecho' quedan preparados).<br>- Working Directory: No cambia.
+
+Git Reset --mixed: Al ejecutar git reset --mixed HEAD~1, ¿qué le sucede a HEAD, al Staging Area y al Working Directory?; - HEAD retrocede 1 commit.<br>- Staging Area: Se actualiza para coincidir con el nuevo HEAD (cambios 'deshechos' salen del staging).<br>- Working Directory: No cambia (cambios 'deshechos' quedan como modificaciones no preparadas).
+
+Git Reset: ¿Cuál es el modo por defecto de git reset si no se especifica --soft o --hard?; --mixed
+
+Git Reset --hard: Al ejecutar git reset --hard HEAD~1, ¿qué le sucede a HEAD, al Staging Area y al Working Directory?; - HEAD retrocede 1 commit.<br>- Staging Area: Se actualiza para coincidir con el nuevo HEAD.<br>- Working Directory: Se actualiza para coincidir con el nuevo HEAD (¡los cambios posteriores a ese commit se pierden!).
+
+Git Reset --hard: ¿Cuál es el principal riesgo asociado al uso de git reset --hard?; La pérdida permanente de cambios que estaban en el Working Directory o Staging Area y que no estaban incluidos en el commit al que se retrocedió.
+
+Git Reset vs Revert: ¿Cuál es la diferencia fundamental en cómo git reset y git revert deshacen cambios respecto al historial?; git reset mueve el puntero HEAD (modifica el historial local), mientras que git revert añade un nuevo commit (preserva el historial y añade una anulación)
