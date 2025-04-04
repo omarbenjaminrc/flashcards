@@ -1,0 +1,19 @@
+Git Amend: ¿Cuál es el propósito principal de git commit --amend?; Modificar el commit más reciente de la rama actual, ya sea para cambiar su mensaje o para añadir/corregir archivos.
+
+Git Amend: ¿Edita git commit --amend directamente el commit anterior?; No. Crea un nuevo commit que reemplaza completamente al commit anterior en la punta de la rama.
+
+Git Amend: ¿Qué sucede con el identificador (SHA-1 hash) del commit original después de usar git commit --amend?; El commit original es descartado (en esa rama) y el nuevo commit "enmendado" recibe un identificador (SHA-1) diferente.
+
+Git Amend: Si olvidaste añadir un archivo (new_file.txt) en tu último commit, ¿qué debes hacer antes de ejecutar git commit --amend para incluirlo?; Ejecutar git add new_file.txt para ponerlo en el Staging Area.
+
+Git Amend: Al ejecutar git commit --amend, ¿qué oportunidad se te presenta respecto al mensaje del commit?; Se abre un editor permitiéndote modificar el mensaje del commit que estás enmendando.
+
+Git Amend: Dado que commit --amend reemplaza el commit anterior, ¿qué implicación tiene esto para el historial?; Reescribe el historial de la rama local.
+
+Git Amend: ¿Cuál es la regla fundamental sobre cuándo es seguro usar git commit --amend?; Solo se debe usar en commits que aún no han sido compartidos (empujados/pushed) a un repositorio remoto.
+
+Git Log: ¿Qué información adicional muestra la opción -p usada con git log (ej: git log -p)?; Muestra el diff (los cambios específicos introducidos) en formato parche para cada commit listado.
+
+Git Show: ¿Cuál es el propósito principal del comando git show (sin argumentos)?; Mostrar información detallada (metadata y diff) sobre el commit más reciente (HEAD).
+
+Git Amend: Si ejecutas git commit --amend inmediatamente después de otro git commit --amend (sin nuevos git add), ¿qué efecto principal tendrá?; Principalmente, te permitirá editar de nuevo el mensaje del último commit enmendado. Si no había nuevos cambios preparados, el contenido del commit no variará.
