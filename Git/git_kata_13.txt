@@ -1,0 +1,15 @@
+Git Rebase Interactive: ¿Cuál es el propósito principal de la opción -i en git rebase -i?; Hacer el rebase interactivo, permitiendo manipular commits individuales (reordenar, editar, combinar, etc.) a través de un editor de texto.
+
+Git Rebase Interactive: Al usar git rebase -i commit-ref, ¿qué commits se listan en el editor para ser modificados?; Los commits que ocurrieron en la rama actual después del commit especificado por commit-ref. El commit base no se lista ni se modifica.
+
+Git Rebase Interactive: ¿Cómo se reordena la secuencia de commits usando el editor interactivo de rebase -i?; Simplemente cambiando el orden de las líneas en el archivo. Cada línea representa un commit <br> se ejecutan de arriba abajo.
+
+Git Rebase Interactive: ¿Qué acción representa el comando pick que aparece por defecto junto a cada commit en el editor de rebase -i?; Usar el commit tal cual, sin modificarlo (a menos que se cambie su posición o se use otro comando).
+
+Git Rebase Interactive: ¿Cuál es la consecuencia principal de reordenar commits con rebase -i respecto a sus identificadores (SHA-1)?; Los commits reordenados (y los posteriores en la rama) obtienen nuevos identificadores SHA-1 porque su posición y/o padre en la historia cambian. Se reescribe la historia.
+
+Git Reflog: ¿Qué información registra el comando git reflog?; Un registro local de dónde han estado los punteros de las ramas (como HEAD) a lo largo del tiempo. Es un historial de los movimientos de las referencias.
+
+Git Reflog: ¿Por qué git reflog es especialmente útil después de operaciones que reescriben la historia como rebase -i?; Porque recuerda los SHAs de los commits antes de la reescritura, permitiendo potencialmente recuperar estados anteriores si se comete un error durante el rebase.
+
+Git Reflog: Si un rebase -i sale mal, ¿cómo podría git reflog ayudar a deshacerlo?; Puedes usar git reflog para encontrar el SHA donde estaba HEAD antes del rebase, y luego usar git reset --hard SHA_anterior para volver a ese estado (¡con precaución!).
