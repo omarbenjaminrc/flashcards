@@ -1,0 +1,19 @@
+#separator:;
+#html:true
+Git Squash: ¿Cuál es el objetivo principal de hacer "squash" (aplastar) a varios commits?; Combinar múltiples commits relacionados en un único commit más significativo y coherente, limpiando el historial.
+
+Git Squash: ¿Qué comando y opción iniciarías para combinar los últimos 5 commits en uno solo?; git rebase -i HEAD~5
+
+Git Rebase Interactive (squash): En el editor de rebase -i, ¿qué comando usarías en lugar de pick para un commit si quieres combinar sus cambios con el commit anterior y editar su mensaje combinado después?; squash (o s)
+
+Git Rebase Interactive (fixup): En el editor de rebase -i, ¿qué comando usarías en lugar de pick si quieres combinar los cambios con el commit anterior pero descartar el mensaje de este commit?; fixup (o f)
+
+Git Rebase Interactive (squash): Después de guardar el archivo interactivo con comandos squash, ¿qué sucede inmediatamente después si usaste squash (y no solo fixup)?; Se abre de nuevo el editor para que escribas un nuevo mensaje de commit único para el commit combinado, partiendo de los mensajes originales concatenados.
+
+Git Squash Workflow: Has hecho un squash de varios commits en uno. Ahora editas un archivo para una pequeña limpieza. ¿Cómo incluyes esta limpieza en el commit recién "squasheado" sin crear un commit nuevo y sin reabrir el editor de mensajes?; 1. git add archivo_limpio <br> 2. git commit --amend --no-edit
+
+Git Amend: ¿Cuál es el propósito de la opción --no-edit en git commit --amend --no-edit?; Realizar la enmienda (añadiendo cambios preparados) sin abrir el editor de texto para modificar el mensaje del commit existente.
+
+Git Commit Messages: ¿Por qué es útil combinar commits pequeños ("WIP", "fix") en uno solo con squash o fixup?; Permite crear un único commit con un mensaje claro y descriptivo que represente la funcionalidad completa, mejorando la legibilidad del historial.
+
+Git Commit Messages: Según las buenas prácticas, ¿cómo debería ser la línea de asunto (la primera línea) de un mensaje de commit?; Corta (idealmente < 50 caracteres), empezar con mayúscula, usar el modo imperativo (ej: "Fix bug", "Add feature") y no terminar con punto.
