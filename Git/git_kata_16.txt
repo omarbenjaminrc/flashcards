@@ -1,0 +1,23 @@
+Git Stash: ¿Cuál es el propósito principal de git stash?; Guardar temporalmente los cambios locales no confirmados (staged y unstaged) para limpiar el directorio de trabajo y poder cambiar de contexto (ej: cambiar de rama, arreglar un bug).
+
+Git Stash: Por defecto, ¿qué tipos de cambios guarda git stash?; Guarda los cambios preparados (staged) y los cambios no preparados (unstaged) en archivos que ya están siendo rastreados por Git.
+
+Git Stash: Por defecto, ¿qué tipos de archivos o cambios no son guardados por git stash?; Archivos nuevos no rastreados (untracked) y archivos ignorados (a menos que se usen opciones como -u o -a).
+
+Git Stash: ¿Cuál es el estado del Directorio de Trabajo y el Staging Area inmediatamente después de ejecutar git stash?; Ambos vuelven al estado del último commit (HEAD), quedando limpios de cambios locales.
+
+Git Stash: ¿Qué comando muestra la lista de todos los "stashes" (reservas) guardados?; git stash list
+
+Git Stash: ¿Cómo se identifica la reserva más reciente en la salida de git stash list?; Como stash@{0}.
+
+Git Stash: ¿Qué comando se usa para aplicar (recuperar) la reserva más reciente del stash?; git stash apply
+
+Git Stash: Al usar git stash apply (sin opciones), ¿qué sucede con la separación original entre cambios staged y unstaged?; Se pierde. Todos los cambios (staged y unstaged originales) se aplican como cambios unstaged en el Directorio de Trabajo.
+
+Git Stash: ¿Qué opción se añade a git stash apply para restaurar los cambios manteniendo la separación original entre Staging Area y Working Directory?; --index (ej: git stash apply --index)
+
+Git Stash: Una vez aplicado y ya no necesario, ¿qué comando elimina la reserva más reciente (stash@{0})? ; git stash drop
+
+Git Stash: ¿Cómo eliminarías una reserva específica que no es la más reciente, por ejemplo stash@{2}?; git stash drop stash@{2}
+
+Git Stash Kata Context: ¿Por qué era seguro usar git reset --hard HEAD después del primer git stash apply fallido en la kata?; Porque los cambios originales todavía estaban guardados de forma segura en la reserva del stash, listos para ser reaplicados correctamente con apply --index.
