@@ -1,0 +1,19 @@
+Git Ignore: ¿Cuál es el propósito principal del archivo .gitignore?; Especificar patrones de archivos o directorios que Git debe ignorar (no mostrar como "untracked" ni añadir automáticamente).
+
+Git Ignore: ¿Dónde se suele colocar el archivo .gitignore?; Generalmente en el directorio raíz del repositorio, aunque también puede haber en subdirectorios.
+
+Git Ignore: ¿Cómo afecta .gitignore a un archivo nuevo (nunca rastreado) que coincide con uno de sus patrones?; Git deja de mostrarlo como "Untracked file" en git status y no lo incluirá en comandos como git add ..
+
+Git Ignore: ¿Por qué es necesario añadir (git add) y confirmar (git commit) el propio archivo .gitignore?; Para que las reglas de ignorar sean parte del repositorio y se apliquen consistentemente para todos los colaboradores y copias del proyecto.
+
+Git Ignore: Si añades una regla a .gitignore (ej: *.log) que coincide con un archivo que ya estaba siendo rastreado por Git, ¿Git dejará de rastrearlo automáticamente?; No. .gitignore solo previene el rastreo de archivos nuevos. Los archivos ya rastreados seguirán siendo rastreados.
+
+Git Remove: ¿Qué comando se utiliza para eliminar un archivo del rastreo de Git (staging area) pero mantenerlo en el Directorio de Trabajo?; git rm --cached nombre_del_archivo
+
+Git Remove: ¿Cuál es la diferencia principal entre git rm archivo y git rm --cached archivo?; git rm elimina el archivo del rastreo Y del disco (Directorio de Trabajo).<br>git rm --cached elimina el archivo SOLO del rastreo, pero lo deja en el disco.
+
+Git Ignore: ¿Para qué se usa git rm --cached archivo en el contexto de .gitignore?; Para dejar de rastrear un archivo que ya estaba en Git y que ahora quieres que sea ignorado según una nueva regla en .gitignore, sin borrarlo localmente.
+
+Git Ignore: ¿Cómo puedes especificar una excepción a una regla general en .gitignore? (Ej: ignorar todos los .txt excepto importante.txt); Usando el signo de exclamación ! antes del patrón específico. Ejemplo: !importante.txt.
+
+Git Ignore: ¿Cuál podría ser un caso de uso para usar un patrón de excepción con ! en .gitignore?; Ignorar un directorio completo (ej: logs/) pero seguir rastreando un archivo específico dentro de ese directorio (ej: !logs/config.log).
