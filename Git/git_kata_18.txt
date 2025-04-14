@@ -1,0 +1,19 @@
+#separator:;
+#html:true
+Git Submodule: Definición; Una forma de incrustar otro repositorio Git (<b>componente</b>) dentro de un repositorio Git principal (<b>padre</b>). El padre rastrea un <b>commit SHA específico</b> del submódulo, no su contenido directamente.
+Git Submodule: Comando para añadir; <code>git submodule add <url_repositorio> <ruta_local></code>
+Git Submodule: Acciones de add; <b>1.</b> Clona el repo externo en la <code><ruta_local></code>.<br><b>2.</b> Crea/actualiza el archivo <code>.gitmodules</code>.<br><b>3.</b> Prepara (stage) <code>.gitmodules</code> y el <b>SHA del commit actual</b> del submódulo en el repo padre.
+Git Submodule: Archivo .gitmodules; Registra la correspondencia entre la ruta local del submódulo y la URL de su repositorio remoto. Debe ser versionado en el repositorio padre.
+Git Submodule: Mecanismo de rastreo; El repositorio padre almacena el <b>commit SHA específico</b> del submódulo que debe ser utilizado para esa versión del repositorio padre.
+Git Submodule: Confirmar cambios en el padre; Se debe confirmar (<code>git commit</code>) en el repo padre tanto el archivo <code>.gitmodules</code> (si cambió) como la referencia al commit SHA del submódulo (preparada con <code>git add <ruta_submódulo></code>).
+Git Submodule: Trabajar dentro del submódulo; Sí, el directorio del submódulo es un repositorio Git completamente funcional e independiente (se puede hacer <code>pull</code>, <code>push</code>, <code>commit</code>, etc., en él).
+Git Submodule: Detectar cambios externos; El repo padre (vía <code>git status</code> o <code>git diff</code>) mostrará el submódulo como modificado (<code>new commits</code>) si el commit local del submódulo difiere del SHA registrado en el padre.
+Git Submodule: Actualizar - Paso 1 (Contenido); Entrar al directorio del submódulo (<code>cd <ruta_submódulo></code>) y ejecutar <code>git pull</code> (o fetch/merge) para traer cambios de su propio remoto.
+Git Submodule: Actualizar - Paso 2 (Referencia en Padre); Volver al repo padre (<code>cd ..</code>), preparar el cambio (<code>git add <ruta_submódulo></code>) y confirmar (<code>git commit</code>) para registrar el <b>nuevo commit SHA</b> del submódulo en el historial del padre.
+Git Submodule: Estado inicial al clonar; Los directorios de los submódulos se crean pero están <b>vacíos</b>.
+Git Submodule: Comando init post-clonación; <code>git submodule init</code> lee <code>.gitmodules</code> y configura las URLs remotas de los submódulos en el archivo <code>.git/config</code> local del padre.
+Git Submodule: Comando update post-clonación/init; <code>git submodule update</code> clona los repositorios de los submódulos (si es necesario) y hace checkout del <b>commit SHA exacto</b> registrado en el repositorio padre.
+Git Submodule: Atajo post-clonación; <code>git submodule update --init</code> combina los pasos de <code>init</code> y <code>update</code>.
+Git Submodule: Opción update --remote; Ignora el SHA registrado en el padre, contacta el remoto del submódulo, obtiene el último commit de su rama por defecto y lo chequea localmente.
+Git Submodule: Efecto de update --remote; El repositorio padre probablemente mostrará el submódulo como modificado (<code>new commits</code>), ya que el SHA local diferirá del registrado en el padre.
+Git Submodule: Comando de estado; <code>git submodule status</code> muestra los submódulos registrados y el commit SHA actualmente chequeado en cada uno.
