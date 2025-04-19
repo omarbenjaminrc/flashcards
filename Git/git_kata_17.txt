@@ -1,3 +1,5 @@
+#separator:;
+#html:true
 Git Ignore: ¿Cuál es el propósito principal del archivo .gitignore?; Especificar patrones de archivos o directorios que Git debe ignorar (no mostrar como "untracked" ni añadir automáticamente).
 
 Git Ignore: ¿Dónde se suele colocar el archivo .gitignore?; Generalmente en el directorio raíz del repositorio, aunque también puede haber en subdirectorios.

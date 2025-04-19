@@ -1,0 +1,19 @@
+#separator:;
+#html:true
+Git Tag: Definición y Propósito Principal;Un <b>nombre legible</b> que actúa como un <b>marcador permanente</b> para un <b>commit SHA específico</b>, facilitando la referencia a puntos importantes del historial (ej: versiones).
+Git Tag: Uso Más Común;Marcar <b>versiones de lanzamiento</b> (releases) del software, como <code>v1.0</code>, <code>v2.1-beta</code>.
+Git Tag vs Branch: Diferencia Fundamental;Las <b>etiquetas</b> (tags) apuntan permanentemente a un commit específico una vez creadas.<br>Las <b>ramas</b> (branches) son punteros móviles que avanzan con nuevos commits.
+Git Tag: Tipos Principales;<b>1. Anotadas (Annotated):</b> Objetos completos con metadatos.<br><b>2. Ligeras (Lightweight):</b> Simples punteros a un commit.
+Git Tag: Características de las Etiquetas Anotadas;Almacenan metadatos: <b>nombre del etiquetador</b>, <b>email</b>, <b>fecha</b>, y un <b>mensaje de etiquetado</b>. Pueden ser firmadas con GPG. Son objetos Git completos.
+Git Tag: Comando para Crear una Etiqueta Anotada (en HEAD);<code>git tag -a nombre-tag -m "Mensaje descriptivo"</code>
+Git Tag: Características de las Etiquetas Ligeras;Simples punteros a un commit SHA, <b>sin metadatos adicionales</b>. Como una "rama que no se mueve".
+Git Tag: Comando para Crear una Etiqueta Ligera (en HEAD);<code>git tag nombre-tag</code>
+Git Tag: Tipo Recomendado para Lanzamientos Públicos;<b>Anotadas</b>, porque contienen información contextual importante (quién, cuándo, por qué).
+Git Tag: Comando para Listar Todas las Etiquetas Locales;<code>git tag</code> (o <code>git tag --list</code>)
+Git Tag: Comando para Listar Etiquetas que Coinciden con un Patrón;<code>git tag --list "patrón*"</code> (ej: <code>git tag --list "v1.*"</code>)
+Git Tag: Comando para Ver Información Detallada de una Etiqueta;<code>git show nombre-tag</code> (Muestra metadatos de la etiqueta si es anotada, y luego info del commit).
+Git Tag: Cómo Etiquetar un Commit Específico (No HEAD);Añadir el <b>SHA del commit</b> (o una referencia) al final del comando de creación: <br><code>git tag -a nombre-tag SHA-commit -m "Mensaje"</code>
+Git Tag: Comando para Eliminar una Etiqueta Local;<code>git tag -d nombre-tag</code>
+Git Tag: ¿Son las etiquetas locales o remotas por defecto?;<b>Locales</b>. Deben ser empujadas explícitamente para compartirlas.
+Git Tag: Comando para Empujar Todas las Etiquetas Locales a un Remoto;<code>git push --tags nombre-remoto</code> (ej: <code>git push --tags origin</code>)
+Git Tag: Comando para Obtener el SHA del Commit Apuntado por una Etiqueta;<code>git rev-parse nombre-tag</code>
