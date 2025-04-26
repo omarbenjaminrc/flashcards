@@ -1,11 +1,4 @@
-# Este archivo contiene flashcards de Docker Nivel 2 para Anki.
-# Cubre Dockerfiles, Volúmenes y Networking.
-# Separador de campos: ;
-# Deck: (Puedes especificarlo al importar)
-# Tipo de Nota: Básico (Front and Back)
-
-<p>¿Qué es un <strong>Dockerfile</strong>?</p>
-<p>¿Para qué lo usa un desarrollador?</p>;<h3>Dockerfile</h3><p>Es un archivo de texto con <strong>instrucciones paso a paso</strong> para <strong>construir una Imagen Docker personalizada</strong>.</p><p>Los desarrolladores lo usan para empaquetar **su propio código**, dependencias y configuraciones en una imagen portable y reproducible.</p><p><em>Analogy: La receta o instrucciones detalladas para tu plano de aplicación personalizado.</em></p>
+<p>¿Qué es un <strong>Dockerfile</strong>?</p> <p>¿Para qué lo usa un desarrollador?</p>;<h3>Dockerfile</h3><p>Es un archivo de texto con <strong>instrucciones paso a paso</strong> para <strong>construir una Imagen Docker personalizada</strong>.</p><p>Los desarrolladores lo usan para empaquetar **su propio código**, dependencias y configuraciones en una imagen portable y reproducible.</p><p><em>Analogy: La receta o instrucciones detalladas para tu plano de aplicación personalizado.</em></p>
 <p>¿Cuál es el comando principal para <strong>construir una imagen</strong> a partir de un Dockerfile?</p>;<h3><code>docker build [OPCIONES] RUTA_DEL_CONTEXTO</code></h3><p>Lee el <code>Dockerfile</code> en la <code>RUTA_DEL_CONTEXTO</code> (generalmente <code>.</code> para el directorio actual) y ejecuta sus instrucciones para crear la imagen.</p><p><strong>Opción clave:</strong> <code>-t NOMBRE[:TAG]</code> para nombrar y etiquetar la imagen construida (ej: <code>-t mi_app:v1</code>).</p><p><em>Analogy: Usar la receta para construir el plano.</em></p>
 <p>¿Cuál es la <strong>primera instrucción</strong> obligatoria en un Dockerfile y qué define?</p>;<h3><code>FROM imagen_base[:tag]</code></h3><p>Define la **imagen base** sobre la cual se construirá la nueva imagen. Es el punto de partida.</p><p><em>Analogy: Elegir el plano básico (ej: imagen de Ubuntu, Node.js o Python) para empezar.</em></p>
 <p>¿Qué instrucción de Dockerfile usas para ejecutar un comando **durante la construcción de la imagen** (ej: instalar paquetes, copiar archivos de configuración del sistema)?</p>;<h3><code>RUN comando</code></h3><p>Ejecuta un comando dentro del entorno de construcción. Cada <code>RUN</code> crea una nueva capa en la imagen.</p><p><em>Analogy: Hacer trabajos de construcción o instalación *mientras* creas el plano.</em></p>
