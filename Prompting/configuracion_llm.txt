@@ -1,0 +1,30 @@
+#separator:;
+#html:true
+#columns:Front;Back
+¿Qué controla la "<b>Configuración de salida del LLM</b>"?;Controla <b>cómo</b> el modelo genera su respuesta. Es clave para una ingeniería de prompts efectiva.
+¿Cuál es un ajuste de configuración importante relacionado con el <b>tamaño</b> de la respuesta?;La <b>Longitud de salida</b>, que define el número máximo de tokens a generar.
+¿Qué efecto tiene generar <b>más tokens</b> en un LLM?;Requiere <b>más computación</b>, puede ser <b>más lento</b> y generar <b>costos más altos</b>.
+Si necesitas una salida corta, ¿basta con solo reducir la longitud máxima de tokens?;No, solo causa que el LLM deje de predecir tokens. Posiblemente también necesitas <b>diseñar tu prompt</b> para que la salida sea corta.
+¿Para qué técnicas de prompting es especialmente importante restringir la longitud de salida?;Para técnicas como <b>ReAct</b>, para evitar que el LLM emita tokens innecesarios después de la respuesta deseada.
+¿Qué determinan los "<b>Controles de muestreo</b>" en un LLM?;Determinan <b>cómo se procesan las probabilidades</b> de los tokens predichos para elegir el siguiente token de salida.
+¿Qué predice un LLM para el siguiente token?;Predice <b>probabilidades</b> para <b>cada token</b> en su vocabulario.
+Menciona los controles de muestreo más comunes.;<b>Temperatura</b>, <b>Top-K</b> y <b>Top-P</b> (también conocido como muestreo de núcleo).
+¿Qué controla la <b>Temperatura</b> en la generación de texto?;Controla el <b>grado de aleatoriedad</b> en la selección de tokens.
+¿Qué tipo de respuesta obtienes con una <b>Temperatura baja</b> (cercana a 0)?;Respuestas más <b>determinísticas</b> y predecibles, buenas para tareas factuales.
+¿Qué es el <b>muestreo codicioso</b> (greedy decoding) en relación a la Temperatura?;Es una Temperatura de <b>0</b>, donde siempre se selecciona el token con la probabilidad más alta.
+¿Qué tipo de respuesta obtienes con una <b>Temperatura alta</b>?;Respuestas más <b>diversas</b> e inesperadas, útiles para resultados creativos.
+¿Qué controla <b>Top-K</b> en la generación de texto?;Selecciona el siguiente token solo de los <b>K tokens con mayor probabilidad</b>.
+¿Qué efecto tiene un <b>Top-K alto</b>?;Genera una salida <b>más creativa y variada</b>.
+¿Qué efecto tiene un <b>Top-K bajo</b>?;Genera una salida <b>más restrictiva y factual</b>.
+¿Qué controla <b>Top-P</b> (muestreo de núcleo) en la generación de texto?;Selecciona el siguiente token solo de los tokens cuya <b>probabilidad acumulada</b> no supera un cierto valor <b>P</b>.
+¿Cómo eliges los valores óptimos para Top-K y Top-P?;La mejor manera es <b>experimentar</b> con ambos métodos (juntos o por separado) y ver qué produce los resultados buscados.
+Si configuras la Temperatura a 0, ¿qué pasa con Top-K y Top-P?;Se vuelven <b>irrelevantes</b>, ya que el token más probable siempre es seleccionado.
+Si configuras Top-K a 1, ¿qué pasa con la Temperatura y Top-P?;Se vuelven <b>irrelevantes</b>, ya que solo un token (el más probable) pasa el criterio Top-K.
+Como punto de partida general, ¿qué valores se sugieren para Temperatura, Top-P y Top-K para resultados coherentes pero creativos?;Temperatura: <b>0.2</b>, Top-P: <b>0.95</b>, Top-K: <b>30</b>.
+Para resultados especialmente creativos, ¿cómo podrías ajustar Temperatura, Top-P y Top-K?;Temperatura: <b>0.9</b>, Top-P: <b>0.99</b>, Top-K: <b>40</b>.
+Para tareas con una única respuesta correcta (ej. matemáticas), ¿qué Temperatura se recomienda?;Temperatura: <b>0</b>.
+¿Qué advertencia se menciona sobre dar "más libertad" al LLM (alta Temp, Top-K, Top-P)?;Puede generar texto <b>menos relevante</b>.
+¿Qué es el "<b>bug del bucle de repetición</b>"?;Cuando el modelo se queda <b>atascado en un ciclo</b>, repitiendo la misma palabra, frase o estructura.
+¿Por qué puede ocurrir el bug de repetición con <b>Temperaturas bajas</b>?;El modelo se vuelve muy determinístico, se apega rígidamente al camino de alta probabilidad y revisita texto generado previamente.
+¿Por qué puede ocurrir el bug de repetición con <b>Temperaturas altas</b>?;La salida se vuelve excesivamente aleatoria, y una palabra elegida al azar puede llevar de vuelta a un estado previo, creando un bucle.
+¿Cómo se resuelve a menudo el bug del bucle de repetición?;Requiere <b>experimentación cuidadosa</b> con Temperatura y Top-K/Top-P para encontrar un equilibrio entre determinismo y aleatoriedad.

@@ -1,0 +1,31 @@
+#separator:;
+#html:true
+#columns:Front;Back
+¿Cuál es el tipo de prompting más <b>simple</b>?;Prompting <b>general</b> o <b>Zero-shot</b>.
+¿Qué característica define al prompting <b>Zero-shot</b>?;No proporciona <b>ejemplos</b> ("no examples"). Solo describe la tarea y da texto inicial.
+¿En qué consiste el prompting <b>One-shot</b>?;Proporciona un <b>único ejemplo</b> completo (entrada y salida deseada) para que el modelo imite.
+¿En qué consiste el prompting <b>Few-shot</b>?;Proporciona <b>múltiples ejemplos</b> (entrada y salida deseada) para que el modelo siga un patrón.
+¿Por qué son útiles los ejemplos en One-shot y Few-shot?;Ayudan al modelo a <b>entender la tarea</b> y a <b>imitar una estructura o patrón</b> de salida específico.
+Según el texto, ¿cuál es una regla general para el número de ejemplos en <b>Few-shot</b>?;Usar al menos <b>tres a cinco ejemplos</b>.
+¿Cuál es el propósito principal del prompting de <b>Sistema</b>?;Define el <b>contexto general</b> y el <b>propósito global</b> del modelo (la "foto grande").
+¿Cuál es el propósito principal del prompting <b>Contextual</b>?;Proporciona <b>detalles específicos</b> o información de fondo <b>relevante para la tarea o conversación actual</b> (es dinámico).
+¿Cuál es el propósito principal del prompting de <b>Rol</b>?;Asigna una <b>identidad o personaje</b> específico al modelo para influir en su <b>tono y estilo</b>.
+¿Estas técnicas (Sistema, Contextual, Rol) se excluyen mutuamente?;No, puede haber <b>solapamiento</b> entre ellas.
+¿En qué consiste el prompting de "<b>Step-back</b>" (paso atrás)?;Primero, se le pide al LLM que considere una <b>pregunta general relacionada</b> con la tarea, y luego se usa la respuesta para el prompt de la tarea específica.
+¿Cómo mejora el prompting de Step-back el rendimiento?;Ayuda al LLM a <b>activar conocimiento de fondo</b> y procesos de razonamiento relevantes antes de resolver el problema.
+¿En qué consiste el prompting de "<b>Cadena de Pensamiento</b>" (CoT)?;Le pide al LLM que genere <b>pasos de razonamiento intermedios</b> antes de dar la respuesta final.
+¿Por qué CoT ayuda a tener respuestas más precisas?;Permite al LLM "razonar" paso a paso, lo que es útil para <b>tareas complejas</b>.
+¿Cuál es una <b>ventaja</b> de CoT en cuanto a esfuerzo y modelos?;Es de <b>bajo esfuerzo</b> y funciona bien con LLMs "tal cual" (off-the-shelf), sin necesidad de fine-tuning.
+¿Cuál es una <b>ventaja</b> de CoT en cuanto a entender al modelo?;Ofrece <b>interpretación</b>, puedes ver los pasos de razonamiento que siguió.
+¿Cuál es una <b>desventaja</b> de CoT?;Genera <b>más tokens de salida</b> (incluyendo el razonamiento), lo que puede aumentar costos y tiempo.
+¿Qué técnica combina muestreo y votación mayoritaria con CoT para mejorar la precisión?;La <b>Auto-consistencia</b>.
+¿Cómo logra la Auto-consistencia generar diversas rutas de razonamiento?;Enviando el <b>mismo prompt múltiples veces</b>, a menudo con una <b>Temperatura alta</b>.
+¿Cómo elige la Auto-consistencia la respuesta final?;Genera respuestas de múltiples rutas de razonamiento, extrae la respuesta de cada una y elige la <b>respuesta más común</b>.
+¿Cuál es la principal diferencia entre <b>Árbol de Pensamientos (ToT)</b> y CoT?;ToT explora <b>múltiples rutas de razonamiento simultáneamente</b>, no solo una cadena lineal.
+¿Para qué tipo de tareas es adecuado <b>ToT</b>?;Para tareas que requieren <b>exploración</b> de diferentes posibilidades.
+¿Qué técnica combina el razonamiento con el uso de <b>herramientas externas</b> (ej. búsqueda, intérprete de código)?;<b>ReAct</b> (razonar y actuar).
+Describe el ciclo básico de <b>ReAct</b>.;El LLM <b>razona</b>, genera una <b>acción</b> (usando una herramienta), <b>observa</b> el resultado, actualiza su razonamiento y repite.
+¿Qué significa <b>Ingeniería Automática de Prompts (APE)</b>?;Usar un modelo para <b>generar prompts automáticamente</b> ("escribir un prompt para escribir prompts").
+¿Cuál es el objetivo de <b>APE</b>?;Automatizar y potencialmente <b>mejorar el rendimiento</b> del modelo al encontrar prompts efectivos.
+¿En qué consiste el <b>Prompting de Código</b>?;Usar prompts para que los LLMs ayuden con tareas como <b>escribir, explicar, traducir, depurar o revisar código</b>.
+¿Qué es el <b>Prompting Multimodal</b>?;Una técnica donde se usan <b>múltiples formatos de entrada</b> (texto, imágenes, audio, código, etc.) para guiar al LLM, no solo texto.

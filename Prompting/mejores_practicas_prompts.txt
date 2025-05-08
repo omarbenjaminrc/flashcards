@@ -1,0 +1,26 @@
+#separator:;
+#html:true
+#columns:Front;Back
+¿Cuál es la <b>mejor práctica</b> más importante para la ingeniería de prompts?;<b>Proporcionar ejemplos</b> (one-shot / few-shot). Actúan como herramienta de aprendizaje y ayudan al modelo a imitar salidas deseadas.
+¿Cómo debes diseñar tus prompts en cuanto a <b>simplicidad</b>?;Deben ser <b>concisos, claros y fáciles de entender</b>. Evita el lenguaje complejo y la información innecesaria.
+¿Por qué es una buena práctica ser <b>específico sobre la salida</b> deseada?;Ayuda al modelo a <b>enfocarse</b> en la información relevante y mejora la precisión general de la respuesta.
+Según el texto, ¿qué es más efectivo para guiar la salida del LLM: usar <b>Instrucciones</b> o <b>Restricciones</b>?;Usar principalmente <b>Instrucciones</b> (decirle al modelo qué hacer) es más efectivo que solo Restricciones (decirle qué no hacer).
+¿Cuándo pueden ser útiles las <b>Restricciones</b> en un prompt?;Para prevenir contenido <b>dañino o sesgado</b>, o cuando se requiere un <b>formato o estilo de salida estricto</b>.
+¿Cómo puedes controlar la <b>longitud</b> de la respuesta generada por un LLM?;Puedes configurar un <b>límite máximo de tokens</b> o <b>solicitar explícitamente una longitud</b> específica en el prompt.
+¿Por qué usar <b>variables</b> en los prompts es una mejor práctica?;Para hacer los prompts más <b>dinámicos y reusables</b>, y para evitar repetir información al integrar prompts en aplicaciones.
+¿Qué deberías experimentar al diseñar prompts, además del contenido principal?;Experimentar con diferentes <b>formatos de entrada</b> (pregunta, declaración, instrucción) y <b>estilos de escritura</b> (tono, elección de palabras).
+Para prompting <b>few-shot con tareas de clasificación</b>, ¿qué práctica específica se recomienda con los ejemplos?;<b>Mezclar el orden de las posibles clases</b> de respuesta en los ejemplos para evitar sobreajuste al orden.
+¿Qué es importante hacer en relación a las <b>actualizaciones de los modelos LLM</b>?;<b>Adaptar tus prompts</b> a las nuevas versiones y capacidades del modelo.
+¿Para qué tipo de tareas se recomienda experimentar con <b>formatos de salida estructurados</b> como JSON o XML?;Para tareas <b>no creativas</b> como extracción, selección, parsing, ordenación, clasificación de datos.
+Menciona un par de <b>beneficios</b> de que el LLM retorne la salida en formato <b>JSON</b>.;Retorna en el <b>mismo estilo</b>, ayuda a <b>enfocarse solo en los datos</b> deseados, menos alucinaciones, permite trabajar con tipos de datos y ordenar.
+¿Qué problema puede ocurrir con el JSON generado por LLMs, especialmente con límites de tokens?;Puede estar <b>incompleto o mal formado</b> debido a que la generación se corta bruscamente.
+¿Qué herramienta específica se menciona para <b>reparar JSON</b> incompleto/mal formado de LLMs?;La librería `json-repair`.
+¿Cómo ayuda un <b>Esquema (ej. JSON Schema)</b> cuando se usa para la <b>entrada</b> del LLM?;Define la <b>estructura y tipos de datos</b> esperados, dando al LLM un "plano" claro y ayudando a enfocar su atención.
+¿Qué se recomienda hacer si tienes que crear un buen prompt para una tarea compleja?;<b>Experimentar junto con otros ingenieros de prompts</b>, ya que habrá variación en el rendimiento de diferentes intentos.
+Según las mejores prácticas de <b>CoT</b>, ¿dónde debe estar la respuesta final respecto al razonamiento?;La respuesta final debe estar <b>después del razonamiento</b> generado por el modelo.
+¿Qué temperatura se recomienda usar para el prompting <b>CoT</b>?;Temperatura <b>0</b>.
+Si usas <b>CoT y Auto-consistencia</b>, ¿qué debes ser capaz de hacer con la respuesta del LLM?;Debes poder <b>extraer la respuesta final</b> separada del razonamiento.
+¿Cuál es una práctica fundamental para aprender y mejorar en ingeniería de prompts?;<b>Documentar detalladamente</b> todos tus intentos de prompt (qué hiciste, configuración, salida, si funcionó o no).
+¿Qué información es útil documentar para cada intento de prompt?;Nombre/versión, objetivo, modelo, configuración (Temp, K, P, límite tokens), el prompt completo, la salida, y resultado/feedback (OK/NOT OK).
+Una vez que un prompt está finalizado para producción, ¿dónde deberías guardarlo en tu proyecto?;En el <b>código base</b>, preferiblemente en un <b>archivo separado</b> del código principal.
+Para un sistema operacionalizado con prompts, ¿en qué deberías confiar para evaluar su desempeño?;En <b>tests y procedimientos de evaluación automatizados</b>.

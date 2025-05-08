@@ -1,0 +1,11 @@
+#separator:;
+#html:true
+#columns:Front;Back
+¿Cómo funciona un <b>LLM</b> (Modelo de Lenguaje Grande) para generar texto?;Funciona como un motor de predicción: toma texto secuencial como entrada y predice el siguiente "token" (palabra o parte de palabra) basándose en lo que ha visto antes y en sus datos de entrenamiento. Repite este proceso.
+¿Qué es un "<b>prompt</b>" en el contexto de un LLM?;Es la <b>entrada</b> que se le da al modelo (principalmente texto, pero puede incluir otras modalidades) para guiarlo a generar una respuesta o predicción específica.
+Define "<b>Ingeniería de Prompts</b>".;Es el proceso de <b>diseñar prompts de alta calidad</b> para guiar a los LLMs a producir <b>salidas precisas</b> y relevantes.
+¿Cuál es el <b>objetivo</b> de la Ingeniería de Prompts?;<b>Configurar el LLM</b> para que prediga la <b>secuencia de tokens correcta</b> que lleve a la respuesta o predicción deseada.
+Menciona algunas <b>actividades</b> clave en el proceso de Ingeniería de Prompts.;Implica <b>experimentar</b> ("tinkering"), <b>optimizar</b> la longitud del prompt, y <b>evaluar</b> el estilo y estructura del prompt en relación a la tarea.
+¿Por qué la Ingeniería de Prompts es un proceso <b>iterativo</b>?;Porque su eficacia depende de muchos factores (el modelo, los datos de entrenamiento, la configuración, tu elección de palabras, estilo, tono, estructura y contexto), lo que requiere <b>pruebas y ajustes repetidos</b>.
+¿Qué pasa si usas prompts <b>inadecuados</b>?;Pueden generar respuestas <b>ambiguas</b>, <b>inexactas</b> y <b>dificultar</b> la capacidad del modelo para dar una salida significativa.
+Según el texto, ¿por qué se enfoca en hacer prompts <b>directamente</b> (ej. en Vertex AI o API) en lugar de chatbots públicos?;Para tener <b>acceso a la configuración</b> del modelo, como la temperatura, y poder ajustarla.

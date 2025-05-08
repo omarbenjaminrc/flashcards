@@ -1,0 +1,13 @@
+#separator:;
+#html:true
+#columns:Front;Back
+¿Qué es el "<b>Prompting de Código</b>" según el texto?;Es usar prompts para que los <b>LLMs ayuden con tareas relacionadas con código</b>, basándose en su enfoque principal en texto.
+¿En qué <b>tareas de codificación</b> específicas puede ayudar un LLM como Gemini?;Puede ayudar a <b>escribir, explicar, traducir, depurar y revisar código</b>.
+¿Cuál es una ventaja práctica de usar un LLM para que te ayude a <b>escribir código</b>?;Puede <b>acelerar</b> el proceso de escritura de código para un desarrollador.
+Según el texto, ¿qué es <b>esencial</b> hacer después de que un LLM genere código?;Es esencial <b>leer y probar</b> el código primero, ya que los LLMs no "razonan" como humanos y pueden repetir datos de entrenamiento (incluyendo errores).
+¿Puede un LLM ayudar a <b>entender código existente</b>?;Sí, puedes pedirle que <b>explique</b> lo que hace un fragmento de código.
+¿Cómo pueden los LLMs ser útiles para trabajar con código en <b>distintos lenguajes</b>?;Pueden ayudar a <b>traducir código</b> de un lenguaje a otro (ej. de Bash a Python).
+Si pides código <b>Python</b> en la interfaz de Vertex AI Studio, ¿qué consejo importante da el texto?;Debes hacer clic en el botón "<b>Markdown</b>" para asegurar la indentación correcta y un formato usable.
+¿Los LLMs pueden ayudar a <b>encontrar y corregir errores</b> en el código?;Sí, puedes usarlos para <b>depurar</b>, proporcionándoles el código y el error para que identifiquen el problema.
+¿Qué tipo de ayuda pueden ofrecer los LLMs más allá de solo depurar errores específicos?;Pueden <b>revisar código</b> y sugerir <b>mejoras generales</b> para hacerlo más robusto o legible.
+Menciona un tipo de mejora sugerida por el LLM en el ejemplo de revisión de código.;Manejo de extensiones de archivo, manejo de espacios, uso de f-strings, inclusión de bloques `try...except` para manejo de errores, etc.
