@@ -1,0 +1,54 @@
+¿Cuál es la función principal del panel de instrumentos en un vehículo?;Ser el principal medio de <b>comunicación</b> entre el vehículo y el conductor, alertando sobre el estado de los sistemas.
+¿Qué indica el Tacómetro?;Las <b>revoluciones por minuto (RPM)</b> del motor. Ayuda a gestionar el cambio de marchas y evitar sobre-exigir el motor.
+¿Qué función cumple el Velocímetro?;Indica la <b>velocidad instantánea</b> a la que circula el vehículo, generalmente en km/h.
+¿Qué registra el Odómetro?;La <b>distancia total o parcial</b> recorrida por el vehículo.
+¿Qué indica un testigo luminoso de color ROJO en el panel de instrumentos?;Un <b>problema grave</b> que requiere <b>atención inmediata</b>. <i>Ej:</i> presión de aceite, temperatura motor alta, freno de mano puesto, carga batería.
+¿Qué indica un testigo luminoso de color AMARILLO o ÁMBAR en el panel de instrumentos?;Una <b>advertencia</b> o falla que requiere <b>revisar pronto</b>. <i>Ej:</i> bajo nivel de combustible, falla ABS, precalentadores diésel, check engine.
+¿Qué indican los testigos luminosos de color VERDE o AZUL en el panel de instrumentos?;El <b>funcionamiento normal</b> de algún sistema. <i>Ej:</i> luces bajas encendidas (verde), luces altas encendidas (azul), intermitentes.
+¿Cuál es la función del sistema de lubricación del motor?;Distribuir <b>aceite</b> para <b>reducir la fricción</b> y el desgaste entre las partes móviles del motor.
+¿Qué acción inmediata se debe tomar si se enciende el testigo de presión de aceite?;<b>Detener el motor inmediatamente</b> para evitar daños graves por falta de lubricación.
+¿Qué componentes principales generan y almacenan la energía en el sistema eléctrico?;El <b>alternador</b> genera la energía con el motor en marcha y la <b>batería</b> la almacena.
+¿Para qué sirven los fusibles en el sistema eléctrico?;Para <b>proteger los circuitos eléctricos</b> de sobrecargas o cortocircuitos, evitando daños mayores o incendios.
+¿Qué puede indicar un fuerte olor a gasolina al conducir?;Una posible <b>fuga de combustible</b>, lo cual representa un <b>riesgo de incendio</b>. Se debe detener e investigar.
+¿Cuál es la función del sistema de refrigeración?;Mantener la <b>temperatura óptima</b> del motor usando líquido refrigerante, evitando el <b>sobrecalentamiento</b>.
+¿Por qué es importante el anticongelante en el líquido refrigerante?;Para <b>evitar la congelación</b> del líquido a bajas temperaturas, lo que podría dañar el motor y el radiador.
+¿Cuál es el principal peligro de los gases del sistema de escape?;Contienen <b>monóxido de carbono (CO)</b>, un gas venenoso, incoloro e inodoro. Es vital revisar fugas.
+¿Qué permite el embrague en un vehículo con caja manual?;<b>Conectar o desconectar</b> la potencia del motor de la caja de cambios para poder cambiar de marcha o detenerse.
+¿Qué permite la caja de cambios?;Seleccionar diferentes <b>relaciones de marcha</b> para optimizar la fuerza y la velocidad del vehículo según las necesidades.
+¿Qué es la servodirección?;Un sistema que <b>asiste al conductor</b>, reduciendo el esfuerzo necesario para girar el volante.
+¿Cuáles son los síntomas de una dirección desalineada?;Dirección <b>pesada</b>, el vehículo <b>tiende a irse hacia un lado</b> en terreno plano, vibraciones, desgaste irregular de neumáticos.
+¿Cuál es la función de la suspensión y la amortiguación?;Mantener el <b>contacto</b> de los neumáticos con la calzada, absorber irregularidades, y proporcionar <b>estabilidad</b> y confort.
+¿Qué síntomas indican que los amortiguadores están en mal estado?;Inclinación excesiva al frenar o en curvas, <b>rebotes</b> excesivos, desgaste irregular de neumáticos, luces oscilan de noche, pérdida de estabilidad.
+¿Qué es el sistema ABS (Sistema Antibloqueo de Frenos)?;Un sistema que <b>evita que las ruedas se bloqueen</b> durante frenadas fuertes, permitiendo mantener el control de la dirección.
+¿Cómo se debe actuar en una frenada de emergencia con ABS?;<b>Pisar el pedal de freno a fondo</b> y mantener la presión. El sistema modulará la frenada automáticamente. <i>Nota: Puede sentirse una vibración en el pedal.</i>
+¿Cuál es la profundidad mínima legal del dibujo de los neumáticos en Chile?;<b>1,6 mm</b>. (Se recomienda 3 mm para mayor seguridad, especialmente en mojado).
+¿Cuándo se debe revisar la presión de los neumáticos?;Regularmente (ej. cada dos semanas o según fabricante) y <b>siempre en frío</b>, antes de iniciar un viaje largo.
+¿Qué problemas causa una BAJA presión en los neumáticos?;Aumento del <b>desgaste en los bordes</b>, mayor consumo de combustible, dirección pesada, tendencia a irse hacia el lado del neumático bajo.
+¿Qué problemas causa una ALTA presión en los neumáticos?;<b>Desgaste en el centro</b> de la banda de rodadura, <b>menor agarre</b>, conducción más incómoda.
+¿Cómo reaccionar ante un reventón de un neumático TRASERO?;Sujetar firme el volante y <b>girarlo suavemente hacia el lado que se desvía la cola</b> del vehículo para corregir la trayectoria. Frenar suavemente.
+¿Cómo reaccionar ante un reventón de un neumático DELANTERO?;<b>Sujetar el volante firmemente</b> para mantener la trayectoria y <b>frenar de forma suave</b>.
+¿Cada cuánto tiempo se recomienda cambiar los neumáticos, independientemente del dibujo?;Al menos cada <b>5 años</b>, debido al envejecimiento natural del caucho que afecta sus propiedades.
+¿Para qué sirven las luces de advertencia de peligro (intermitentes simultáneos)?;<b>Exclusivamente</b> para indicar que el vehículo está <b>detenido por una falla o avería</b>, o para advertir de un peligro inminente en la vía.
+¿Cuándo deben usarse las luces neblineras?;<b>Únicamente</b> cuando la visibilidad esté considerablemente reducida por <b>niebla densa o lluvia torrencial</b>.
+¿Qué son los puntos ciegos o ángulos muertos?;Son las <b>zonas alrededor del vehículo que no son visibles</b> a través de los espejos retrovisores.
+¿Cómo se deben comprobar los puntos ciegos antes de una maniobra?;Además de mirar los espejos, se debe <b>girar brevemente la cabeza</b> para mirar directamente sobre el hombro.
+¿Cómo afecta la energía cinética a la distancia de frenado?;La energía cinética aumenta con el <b>cuadrado de la velocidad</b>. Duplicar la velocidad cuadruplica la energía a disipar, aumentando significativamente la distancia de frenado.
+¿Qué es la fuerza centrífuga y de qué depende?;Es la fuerza que tiende a <b>sacar al vehículo de la curva</b>. Depende directamente de la <b>velocidad</b> e inversamente del <b>radio de la curva</b> (más cerrada = más fuerza).
+¿Cómo se debe tomar una curva para contrarrestar la fuerza centrífuga?;<b>Reducir la velocidad ANTES</b> de entrar en la curva y <b>acelerar suavemente AL SALIR</b> de ella.
+¿Qué es la Distancia de Detención Total (S)?;Es la <b>suma</b> de la Distancia de Reacción (R) y la Distancia de Frenado (F). Fórmula: <b>S = R + F</b>.
+¿Qué es la Distancia de Reacción (R)?;La distancia que recorre el vehículo desde que el conductor <b>percibe un peligro hasta que pisa el freno</b>.
+¿Cuál es el tiempo de reacción normal de un conductor?;Aproximadamente <b>1 segundo</b>.
+¿Cómo se puede estimar la Distancia de Reacción (R) en metros (hasta 99 km/h)?;Multiplicando la <b>primera cifra de la velocidad</b> (en km/h) por <b>3</b>. <i>Ej: a 50 km/h, R ≈ 5 x 3 = 15 m</i>.
+¿Qué es la Distancia de Frenado (F)?;La distancia que recorre el vehículo desde que <b>se pisa el freno hasta que se detiene completamente</b>.
+¿Cómo varía la Distancia de Frenado (F) con la velocidad?;Aumenta aproximadamente con el <b>cuadrado del aumento de la velocidad</b>. <i>Ej: Si duplicas la velocidad, la distancia de frenado se cuadruplica</i>.
+¿Por qué nunca se debe conducir en punto muerto (desenganchado) en una bajada?;Porque se <b>pierde el "freno de motor"</b> y el control del vehículo depende exclusivamente de los frenos, que pueden sobrecalentarse.
+¿Cuál es la diferencia entre Seguridad Activa y Seguridad Pasiva?;La <b>Seguridad Activa</b> ayuda a <b>EVITAR</b> el siniestro (ej: frenos, neumáticos). La <b>Seguridad Pasiva</b> busca <b>REDUCIR LAS CONSECUENCIAS</b> una vez ocurrido el siniestro (ej: cinturón, airbag).
+¿Cuál es la función principal del cinturón de seguridad?;<b>Retener</b> a los ocupantes en su asiento durante un siniestro, evitando que salgan <b>eyectados</b> o golpeen contra el interior del vehículo. Salva vidas.
+¿Es obligatorio el uso del cinturón de seguridad en los asientos traseros?;<b>Sí</b>, para todos los ocupantes. En vehículos año 2002 o posterior, es exigible por ley.
+¿Cómo debe colocarse correctamente la banda TORÁXICA del cinturón?;Cruzando sobre la <b>clavícula</b> (a medio camino entre hombro y cuello) y descendiendo por el <b>centro del pecho</b>.
+¿Cómo debe colocarse correctamente la banda ABDOMINAL del cinturón?;Ajustada sobre los <b>huesos de la cadera</b>, siempre <b>por debajo del abdomen</b> (crucial en embarazadas).
+¿Qué es el "efecto submarino" relacionado con el cinturón de seguridad?;Es el <b>deslizamiento del cuerpo por debajo</b> de la banda abdominal del cinturón durante un impacto, causado por mala colocación o asiento muy reclinado. Es peligroso.
+¿Cuál es la función del Airbag?;<b>Amortiguar el impacto</b> de los ocupantes contra el volante, tablero u otras partes del vehículo en caso de colisión fuerte. Se infla rápidamente.
+¿Por qué es crucial usar el cinturón de seguridad junto con el Airbag?;Porque el airbag está diseñado para funcionar <b>en conjunto</b> con el cinturón. Sin cinturón, la fuerza del airbag puede causar <b>lesiones graves</b>.
+¿Cuál es la función principal del apoyacabezas?;Prevenir o reducir la gravedad de las lesiones cervicales conocidas como <b>"efecto latigazo"</b> en colisiones por alcance (impactos traseros).
+¿Cómo debe ajustarse correctamente el apoyacabezas?;La parte superior debe quedar a la altura de los <b>ojos o del borde superior de la cabeza</b>, y debe estar lo <b>más cerca posible de la nuca</b> (idealmente < 4 cm).
